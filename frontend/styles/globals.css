@@ -1,0 +1,264 @@
+@font-face {
+  font-family: ivymode;
+  src: url("../public/ivymode-light.woff2") format("woff2");
+  font-weight: light;
+  font-style: normal;
+}
+@font-face {
+  font-family: ivymode;
+  src: url("../public/ivymode-regular.woff2") format("woff2");
+  font-weight: regular;
+  font-style: normal;
+}
+
+
+
+:root {
+  --darkblue: #00A7DD;
+  --richblackfogra: #7E2D00;
+  --darkskyblue: #9DC4D1;
+  --lightblue: #ADD8E6;
+  --lightcyan: #D5ECF1;
+}
+
+
+body {
+  font-family: ivymode;
+  font-weight: regular;
+  background: linear-gradient(to left, var(--lightblue), var(--lightcyan));
+  color: var(--richblackfogra);
+  overflow-x: hidden;
+}
+
+.button-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.5s; 
+}
+
+/* add animation when button is active that it is rotating*/
+.button-close:hover {
+  transform: rotate(45deg);
+}
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal.is-closed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.is-closed {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  padding: 20px;
+  width: 60%;
+  max-width: 100rem;
+  height: 90%;
+  max-height: 100rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  
+}
+
+a {
+  color: var(--richblackfogra);
+  text-decoration: none;
+  padding-inline: 1rem;
+}
+/* move items to flex end */
+.navItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  width: 65%;
+}
+
+.navItemsTwo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  padding-right: 5rem;
+}
+
+.lotus {
+  width: 100%;
+  font-size: 31em;
+  color: white;
+  position: absolute;
+}
+
+/* change y axis of lotus */
+.lotus span{
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.mainwrapper {
+  width: 100%;
+  display: flex;
+}
+
+.mainleft {
+  width: 50%;
+  height: 10vh;
+  padding-left: 2rem;
+}
+.headline {
+  position: absolute;
+  padding-top: 2rem;
+  font-size: 13vh;
+}
+.imgleft {
+  position: relative;
+  font-size: 4vh;
+  top: 18rem;
+  left: 13rem;
+  cursor: pointer;
+}
+
+.mainright {
+  width: 50%;
+  height: 100vh;
+}
+
+.skewtxt {
+  transform: skew(0deg, 10deg);
+  font-size: 3vh;
+  text-transform: uppercase;
+  height: 30%;
+  padding-left: 0.8rem;
+  
+}
+
+.imgright {
+  position: absolute;
+  top: 50%;  
+  left: 50%; 
+}
+
+.imgrighttwo {
+  position: absolute;
+  transform: translateY(100px);
+  z-index: 2;
+  top: 50%;  
+  left: 50%; 
+}
+.social{
+  position: absolute;
+  padding: 1rem;
+  width: 3rem;
+  height: 95.5%;
+  background-color: var(--darkskyblue);
+  cursor: pointer;
+  right: 0;
+}
+
+.imgrightthree {
+  position: absolute;
+  transform: translateY(200px);
+  z-index: 1;
+  top: 50%;  
+  left: 50%; 
+
+}
+
+.divcrazy {
+  width: 100%;
+  height: 100vh;
+  background-color: #00A7DD;
+}
+
+.chocolate-nav-button {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.chocolate-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #A0522D;
+  margin: 6px 0;
+  transition: all 0.4s ease;
+}
+
+.chocolate-nav-button:hover .chocolate-bar-1 {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.chocolate-nav-button:hover .chocolate-bar-2 {
+  opacity: 0;
+}
+
+.chocolate-nav-button:hover .chocolate-bar-3 {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+
+.menu {
+  position: absolute;
+  top: 40px; /* adjust to your desired position */
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  /* Add styles for menu items here */
+}
